@@ -6,18 +6,4 @@ const adapter = new PrismaBetterSqlite3({
 });
 const db = new PrismaClient({ adapter });
 
-const test = async () => {
-  const token = await db.sMSToken.findUnique({
-    where: {
-      id: 1,
-    },
-    include: {
-      user: true,
-    },
-  });
-  console.log(token);
-};
-
-test();
-
 export default db;
